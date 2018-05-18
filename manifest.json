@@ -12,9 +12,18 @@
 // REQUIRED KEYS: manifest_version, version, name
 // MORE INFO: https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json
 
+// Step 2. Add Instruction
+// Non-persistent, background script is registered in manifest
+// Extension will checkout js file for what to do, and only do it once 
+
 {
   "name": "Getting Started Example",
   "version": "1.0",
   "description": "Build an Extension!",
+  "permissions": ["storage"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "manifest_version": 2
 }
