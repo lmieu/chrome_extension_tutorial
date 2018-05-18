@@ -1,0 +1,20 @@
+// Step 1. Create the Manifest file
+// manifest.json => JSON-formatted manifest file that defines interaction with browser API
+// - can include forward-slash comments
+// - metadata about extension (version, name, scripts involved, etc.)
+// - keys include: 
+//     applications, author, background, browser_action, chrome_settings_overrides, 
+//     chrome_url_overrides, commands, content_scripts, content_security_policy, 
+//     default_locale, description, developer, devtools_page, homepage_url, icons, 
+//     incognito, manifest_version*, name, omnibox, optional_permissions, options_ui, 
+//     page_action, permissions, protocol_handlers, short_name, theme, version, 
+//     version_name, web_accessible_resources
+// REQUIRED KEYS: manifest_version, version, name
+// MORE INFO: https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json
+
+{
+  "name": "Getting Started Example",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "manifest_version": 2
+}
