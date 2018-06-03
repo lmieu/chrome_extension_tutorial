@@ -16,14 +16,40 @@
 // Non-persistent, background script is registered in manifest
 // Extension will checkout js file for what to do, and only do it once 
 
+// Step 3. Introduce a User Interface
+// A user interface is introduced to better visualize/control the 
+// functions of the extension. User interface and icon imagery must be 
+// registered in manifest
+// default_icons are the toolbar icons representing the app
+// icons are seen in components of chrome, such as the extension management page;
+// common practice is to have icons that can appear optimal on multiple 
+// resolutions of display, and to be .png
+// access to the declarativeContent API must also be registered so the 
+// popup can appear
+
 {
   "name": "Getting Started Example",
   "version": "1.0",
   "description": "Build an Extension!",
-  "permissions": ["storage"],
+  "permissions": ["storage", "declarativeContent"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+     "16":"images/get_started16.png",
+     "32": "images/get_started32.png",
+     "48": "images/get_started48.png",
+     "128": "images/get_started128.png"
+    }
+  },
+  "icons": {
+    "16":"images/get_started16.png",
+    "32": "images/get_started32.png",
+    "48": "images/get_started48.png",
+    "128": "images/get_started128.png"
   },
   "manifest_version": 2
 }

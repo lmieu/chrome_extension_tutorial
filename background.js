@@ -8,4 +8,21 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({color: '#3aa757'}, function() {
     console.log("The color is green.");
   });
+  
+  // declarativeContent - designates actions to be taken depending on 
+  // the content of the page, without asking for permission to access content
+  // in this, when the page changes, unregisters rules indiscriminately
+  // since no array of rule identifiers is passed as the first argument
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+    // adds rules when page is changed given the condition of it being
+    // the developer's chrome site, and shows the "page_action", which in 
+    // this case is the popup
+    chrome.declarativeContent.onPageChanged.addRules([{
+        conditions: [new chrome.declarativeContent.PageStateMatcher({
+          pageUrl: {hostEquals: 'developer.chrome.com'},
+        })
+      ],
+      actions: [new chrome.declarativeContent.ShowPageAction()]
+    }]);
+  });
 });
