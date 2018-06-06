@@ -27,11 +27,17 @@
 // access to the declarativeContent API must also be registered so the 
 // popup can appear
 
+// Step 4. Layer Logic
+// Adds user interaction to button in extension popup using programmatic inject
+// code, not code injection
+// tabs API allows for interaction with browser tabs
+// => activeTab permission grants temp permission to access current tab content
+
 {
   "name": "Getting Started Example",
   "version": "1.0",
   "description": "Build an Extension!",
-  "permissions": ["storage", "declarativeContent"],
+  "permissions": ["storage", "declarativeContent", "activeTab"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
