@@ -33,6 +33,10 @@
 // tabs API allows for interaction with browser tabs
 // => activeTab permission grants temp permission to access current tab content
 
+// Step 5. Give Users Options
+// Adds ui for setting options of colors for extension to change chrome dev site to have
+// Uses options_pages key to register that particular ui, 
+
 {
   "name": "Getting Started Example",
   "version": "1.0",
@@ -42,6 +46,7 @@
     "scripts": ["background.js"],
     "persistent": false
   },
+  "options_page": "options.html",
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {
